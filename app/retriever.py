@@ -23,6 +23,6 @@ def retrieve(query: str) -> list[dict]:
     results = collection.query(
         query_embeddings=[query_embeddings],
         n_results=settings.top_k_results,
-        include=["documents", "metadatas", "ids"]
+        include=["documents", "metadatas"]
     )
     return results
