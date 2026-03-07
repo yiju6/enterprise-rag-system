@@ -1,4 +1,3 @@
-
 from .config import settings
 from pydantic import BaseModel
 from fastapi import FastAPI, UploadFile, File
