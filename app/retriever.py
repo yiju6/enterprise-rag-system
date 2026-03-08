@@ -5,6 +5,9 @@ from .config import settings
 from openai import OpenAI
 import chromadb
 
+import logging
+logging.getLogger("chromadb").setLevel(logging.ERROR)
+
 client = OpenAI(api_key=settings.openai_api_key)
 
 def get_embeddings(query: str) -> list[float]:

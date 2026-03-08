@@ -8,6 +8,11 @@ from .config import settings
 from openai import OpenAI
 import chromadb
 
+import logging
+logging.getLogger("chromadb").setLevel(logging.ERROR)
+
+client = OpenAI(api_key=settings.openai_api_key)
+chroma_client = chromadb.PersistentClient(path=settings.chroma_db_path)
 
 def extract_text_from_pdf(file_path: str) -> str:
     """Extract text from a PDF file."""
@@ -30,8 +35,6 @@ def chunk_text(text: str) -> list[str]:
 
     return chunks
 
-client = OpenAI(api_key=settings.openai_api_key)
-
 def get_embeddings(chunks: list[str]) -> list[list[float]]:
     """Get embeddings for each text chunk using the specified embedding model."""
 
@@ -40,8 +43,6 @@ def get_embeddings(chunks: list[str]) -> list[list[float]]:
         text = text.replace("\n", " ")
         embeddings.append(client.embeddings.create(input = [text], model=settings.embedding_model).data[0].embedding)
     return embeddings
-
-chroma_client = chromadb.PersistentClient(path=settings.chroma_db_path)
 
 def store_in_chromadb(chunks: list[str], embeddings: list[list[float]], source: str) -> None:
     """Store the text chunks and their embeddings in ChromaDB."""
