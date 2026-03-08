@@ -209,3 +209,5 @@ __marimo__/
 .DS_Store
 
 data/chroma_db/
+data/uploads/*
+!data/uploads/.gitkeep
