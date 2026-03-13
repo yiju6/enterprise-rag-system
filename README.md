@@ -103,6 +103,13 @@ Open `.env` and fill in your settings:
 - `LLM_PROVIDER`: set to `openai` or `anthropic`
 - Adjust `CHUNK_SIZE`, `CHUNK_OVERLAP`, `TOP_K_RESULTS` as needed
 
+### 5.4 Data Setup
+Download the evaluation dataset from:
+https://github.com/docugami/KG-RAG-datasets/tree/main/sec-10-q
+
+Place PDF files in: data/uploads/
+Place qna_data.csv in: data/eval/
+
 ## 6. Using the System
 
 ### Option A: CLI

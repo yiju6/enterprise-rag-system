@@ -1,6 +1,4 @@
-''' Extract text from various file formats,
-embed the text using a specified embedding model,
-and ingest it into the vector database.
+''' Extract text from various file formats, embed the text using a specified embedding model, and ingest it into the vector database.
 '''
 
 from pypdf import PdfReader
