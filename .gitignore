@@ -211,5 +211,7 @@ __marimo__/
 data/chroma_db/
 data/uploads/*
 !data/uploads/.gitkeep
+data/eval/*
+!data/eval/.gitkeep
 
 README1.md
