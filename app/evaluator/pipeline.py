@@ -8,6 +8,8 @@ from .generation_metrics import compute_generation_metrics
 from .models import EvaluationRun, EvaluationResult
 import time
 from datetime import datetime
+from ..config import settings
+
 
 def get_git_commit() -> str:
     try:
@@ -32,7 +34,10 @@ def run_evaluation(run_id: str, dataset_path: str) -> EvaluationRun:
 
         generation_result = generate_answer(row["question"], retrieve_results)
 
-        retrieval_metrics = compute_retrieval_metrics(retrieved_docs, row["source_docs"], k=5)
+        retrieval_metrics = compute_retrieval_metrics(
+            retrieved_docs, 
+            row["source_docs"], 
+            k=settings.top_k_results)
         generation_metrics = asyncio.run(compute_generation_metrics(
             question=row["question"],
             answer=generation_result["answer"],
