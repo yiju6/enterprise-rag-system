@@ -1,6 +1,4 @@
-'''
-Metrics for evaluating retrieval performance in RAG systems.
-'''
+# Metrics for evaluating retrieval performance in RAG systems.
 
 def hit_rate(retrieved_docs: list[str], source_docs: str, k: int) -> float:
     if not retrieved_docs:
