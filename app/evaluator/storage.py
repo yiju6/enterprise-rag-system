@@ -40,10 +40,12 @@ def _init_db():
                 retrieved_chunks TEXT,
                 retrieved_docs TEXT,
                 source_docs TEXT,
+                source_chunk_type TEXT,
                 answer TEXT,
                 ground_truth TEXT,
                 metrics TEXT,
                 error TEXT,
+                failure_mode TEXT,
                 token_used INTEGER,
                 estimated_cost_usd REAL,
                 response_time_ms REAL,
@@ -84,10 +86,12 @@ def save_evaluation_run(run: EvaluationRun) -> None:
             retrieved_chunks = getattr(result, "retrieved_chunks", None)
             retrieved_docs = getattr(result, "retrieved_docs", None)
             source_docs = getattr(result, "source_docs", None)
+            source_chunk_type = getattr(result, "source_chunk_type", None)
             answer = getattr(result, "answer", None)
             ground_truth = getattr(result, "ground_truth", None)
             metrics = getattr(result, "metrics", None)
             error = getattr(result, "error", None)
+            failure_mode = getattr(result, "failure_mode", None)
             token_used = getattr(result, "token_used", 0)
             estimated_cost_usd = getattr(result, "estimated_cost_usd", 0.0)
             response_time_ms = getattr(result, "response_time_ms", None)
@@ -106,10 +110,12 @@ def save_evaluation_run(run: EvaluationRun) -> None:
                     json.dumps(retrieved_chunks),
                     json.dumps(retrieved_docs),
                     json.dumps(source_docs),
+                    json.dumps(source_chunk_type),
                     answer,
                     ground_truth,
                     json.dumps(metrics),
                     json.dumps(error) if error is not None else None,
+                    json.dumps(failure_mode) if failure_mode is not None else None,
                     token_used,
                     estimated_cost_usd,
                     response_time_ms,
@@ -138,10 +144,12 @@ def get_evaluation_runs() -> list[dict]:
                     "retrieved_chunks": json.loads(r["retrieved_chunks"]) if r["retrieved_chunks"] else None,
                     "retrieved_docs": json.loads(r["retrieved_docs"]) if r["retrieved_docs"] else None,
                     "source_docs": json.loads(r["source_docs"]) if r["source_docs"] else None,
+                    "source_chunk_type": json.loads(r["source_chunk_type"]) if r["source_chunk_type"] else None,
                     "answer": r["answer"],
                     "ground_truth": r["ground_truth"],
                     "metrics": json.loads(r["metrics"]) if r["metrics"] else None,
                     "error": json.loads(r["error"]) if r["error"] else None,
+                    "failure_mode": json.loads(r["failure_mode"]) if r["failure_mode"] else None,
                     "token_used": r["token_used"],
                     "estimated_cost_usd": r["estimated_cost_usd"],
                     "response_time_ms": r["response_time_ms"],

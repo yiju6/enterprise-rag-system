@@ -215,3 +215,6 @@ data/eval/*
 !data/eval/.gitkeep
 
 README1.md
+
+evaluation_runs.db
+data/evaluation/*.csv

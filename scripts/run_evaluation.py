@@ -7,7 +7,9 @@ from app.evaluator.storage import save_evaluation_run
 
 run = run_evaluation(
     run_id="week2_baseline",
-    dataset_path="data/eval/qna_data.csv"
+    dataset_path="data/evaluation/qna_data.csv"
+    companies=["AAPL", "NVDA", "MSFT"],
+    quarter="2023 Q3"
 )
 save_evaluation_run(run)
 print(f"Done. {len(run.results)} questions evaluated.")
