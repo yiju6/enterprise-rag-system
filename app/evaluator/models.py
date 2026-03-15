@@ -7,7 +7,7 @@ class EvaluationResult:
     question: str
     retrieved_chunks: list[str]
     retrieved_docs: list[str]
-    source_doc: str # from ground truth
+    source_docs: str # from ground truth
     answer: str
     ground_truth: str
     metrics: dict[str, float]
