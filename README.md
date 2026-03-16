@@ -108,6 +108,7 @@ Download the evaluation dataset from:
 https://github.com/docugami/KG-RAG-datasets/tree/main/sec-10-q
 
 Place PDF files in: data/uploads/
+
 Place qna_data.csv in: data/eval/
 
 ## 6. Using the System
