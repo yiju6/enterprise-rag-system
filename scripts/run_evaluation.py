@@ -6,8 +6,8 @@ from app.evaluator.pipeline import run_evaluation
 from app.evaluator.storage import save_evaluation_run
 
 run = run_evaluation(
-    run_id="week2_baseline",
-    dataset_path="data/evaluation/qna_data.csv"
+    run_id="week2_baseline_parallel",
+    dataset_path="data/evaluation/qna_data.csv",
     companies=["AAPL", "NVDA", "MSFT"],
     quarter="2023 Q3"
 )

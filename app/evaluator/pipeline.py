@@ -32,13 +32,20 @@ def process_row(row: dict) -> EvaluationResult:
         retrieval_metrics = compute_retrieval_metrics(retrieved_docs, row["source_docs"], k=settings.top_k_results)
         
         loop = asyncio.new_event_loop()
-        generation_metrics = loop.run_until_complete(compute_generation_metrics(
-            question=row["question"],
-            answer=generation_result["answer"],
-            retrieved_contexts=retrieved_contexts,
-            ground_truth=row["ground_truth"]
-        ))
-        loop.close()
+        try:
+            generation_metrics = loop.run_until_complete(
+                asyncio.wait_for(
+                    compute_generation_metrics(
+                        question=row["question"],
+                        answer=generation_result["answer"],
+                        retrieved_contexts=retrieved_contexts,
+                        ground_truth=row["ground_truth"]
+                    ),
+                    timeout=120
+                )
+            )
+        finally:
+            loop.close()
 
         token_used = generation_result.get("token_used", 0)
         estimated_cost = token_used * 0.00002
@@ -80,10 +87,11 @@ def process_row(row: dict) -> EvaluationResult:
             response_time_ms=0.0
         )
 
-def run_evaluation(run_id: str, dataset_path: str) -> EvaluationRun:
+def run_evaluation(run_id: str, dataset_path: str, companies: list[str] = None,
+                   quarter: str = None) -> EvaluationRun:
     start_time = time.time()
     run_timestamp = datetime.utcnow().isoformat() + "Z"
-    dataset = load_dataset(dataset_path)
+    dataset = load_dataset(dataset_path,companies=companies, quarter=quarter)
     results = []
     total_token_used = 0
     total_estimated_cost_usd = 0.0

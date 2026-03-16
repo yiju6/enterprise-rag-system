@@ -9,7 +9,6 @@ from app.evaluator.storage import get_evaluation_runs
 def export_to_csv(run_id: str, output_path: str):
     runs = get_evaluation_runs()
     
-    # 找到对应的 run
     run = next((r for r in runs if r['run_id'] == run_id), None)
     if not run:
         print(f"Run {run_id} not found")
@@ -56,6 +55,6 @@ def export_to_csv(run_id: str, output_path: str):
 
 if __name__ == "__main__":
     export_to_csv(
-        run_id="week2_baseline",
-        output_path="data/evaluation/week2_baseline_results.csv"
+        run_id="week2_baseline_parallel",
+        output_path="data/evaluation/week2_baseline_results_parallel.csv"
     )

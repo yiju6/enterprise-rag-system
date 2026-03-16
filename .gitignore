@@ -218,3 +218,10 @@ README1.md
 
 evaluation_runs.db
 data/evaluation/*.csv
+
+data/eval/*
+!data/eval/.gitkeep
+!data/eval/qna_data.csv 
+
+data/evaluation/*results*.csv
+!data/evaluation/qna_data.csv

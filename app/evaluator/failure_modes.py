@@ -1,3 +1,5 @@
+from .models import EvaluationResult
+
 def classify_failure_mode(result: EvaluationResult) -> list[str]:
     if not result.metrics:
         return ["error"]

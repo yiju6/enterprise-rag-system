@@ -44,11 +44,11 @@ def _init_db():
                 answer TEXT,
                 ground_truth TEXT,
                 metrics TEXT,
-                error TEXT,
-                failure_mode TEXT,
                 token_used INTEGER,
                 estimated_cost_usd REAL,
                 response_time_ms REAL,
+                error TEXT,
+                failure_mode TEXT,
                 FOREIGN KEY (run_id) REFERENCES evaluation_runs(run_id) ON DELETE CASCADE
             )
             """
@@ -90,18 +90,18 @@ def save_evaluation_run(run: EvaluationRun) -> None:
             answer = getattr(result, "answer", None)
             ground_truth = getattr(result, "ground_truth", None)
             metrics = getattr(result, "metrics", None)
-            error = getattr(result, "error", None)
-            failure_mode = getattr(result, "failure_mode", None)
             token_used = getattr(result, "token_used", 0)
             estimated_cost_usd = getattr(result, "estimated_cost_usd", 0.0)
             response_time_ms = getattr(result, "response_time_ms", None)
+            error = getattr(result, "error", None)
+            failure_mode = getattr(result, "failure_mode", None)
 
             c.execute(
                 """
                 INSERT INTO evaluation_results (
-                    run_id, question_id, question, retrieved_chunks, retrieved_docs, source_docs,
-                    answer, ground_truth, metrics, error, token_used, estimated_cost_usd, response_time_ms
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                run_id, question_id, question, retrieved_chunks, retrieved_docs, source_docs,
+                source_chunk_type, answer, ground_truth, metrics, token_used, estimated_cost_usd, 
+                response_time_ms, error, failure_mode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     run.run_id,
@@ -114,11 +114,11 @@ def save_evaluation_run(run: EvaluationRun) -> None:
                     answer,
                     ground_truth,
                     json.dumps(metrics),
-                    json.dumps(error) if error is not None else None,
-                    json.dumps(failure_mode) if failure_mode is not None else None,
                     token_used,
                     estimated_cost_usd,
                     response_time_ms,
+                    json.dumps(error) if error is not None else None,
+                    json.dumps(failure_mode) if failure_mode is not None else None,
                 ),
             )
         conn.commit()
@@ -148,11 +148,11 @@ def get_evaluation_runs() -> list[dict]:
                     "answer": r["answer"],
                     "ground_truth": r["ground_truth"],
                     "metrics": json.loads(r["metrics"]) if r["metrics"] else None,
-                    "error": json.loads(r["error"]) if r["error"] else None,
-                    "failure_mode": json.loads(r["failure_mode"]) if r["failure_mode"] else None,
                     "token_used": r["token_used"],
                     "estimated_cost_usd": r["estimated_cost_usd"],
                     "response_time_ms": r["response_time_ms"],
+                    "error": json.loads(r["error"]) if r["error"] else None,
+                    "failure_mode": json.loads(r["failure_mode"]) if r["failure_mode"] else None,
                 })
             runs.append({
                 "run_id": run_row["run_id"],

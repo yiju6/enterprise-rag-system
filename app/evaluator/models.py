@@ -12,11 +12,11 @@ class EvaluationResult:
     answer: str
     ground_truth: str
     metrics: dict[str, float]
-    error: str | None
-    failure_mode: list[str] | None = None
     token_used: int
     estimated_cost_usd: float
     response_time_ms: float
+    error: str | None
+    failure_mode: list[str] | None = None
 
 @dataclass
 class EvaluationRun:
