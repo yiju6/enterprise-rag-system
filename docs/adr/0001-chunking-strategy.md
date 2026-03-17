@@ -37,7 +37,7 @@ Cons:
 - may miss semantic boundaries
 - redundant embeddings due to overlap
 
-Future work may explore:
+## Future work may explore:
 - semantic chunking
 - adaptive chunk sizes
 - hierarchical retrieval
