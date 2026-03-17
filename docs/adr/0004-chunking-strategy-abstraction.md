@@ -19,10 +19,10 @@ Introduce a **Strategy Pattern** for chunking, with an **Abstract Base Class**  
 ## Consequences
 
 Pros:
-- Adding new chunking strategies in Week 3 only requires creating a new class
-- Callers (ingestor.py) are decoupled from specific implementations
-- Enables A/B testing of different chunking strategies in evaluation
+- Adding new chunking strategies in Week 3 only requires creating a new class.
+- Callers (ingestor.py) are decoupled from specific implementations.
+- Enables A/B testing of different chunking strategies in evaluation.
 
 Cons:
-- slightly more complex implementation
+- Slightly more complex implementation.
 - RecursiveTextChunker was implemented but cannot be used yet. pypdf extracts text without paragraph boundaries (\n\n), producing 1045 chunks vs 108 for fixed-size. Will be revisited in Week 3 with improved PDF parsing.
