@@ -17,7 +17,7 @@ The goal is not just a demo pipeline, but a system architecture that addresses r
 
 This repository documents a 10-week engineering build, evolving from a basic RAG prototype into a production-oriented AI system.
 
-## 1. Current Implementation (Week 1)
+## 1. Current Implementation (Week 2）
 
 The current prototype implements a basic RAG pipeline capable of:
 - ingesting PDF documents
@@ -35,6 +35,13 @@ Current capabilities:
 - Web chat interface
 
 Future iterations will introduce evaluation pipelines, safety mechanisms, multi-tenant architecture, and production deployment infrastructure.
+
+New in Week 2:
+- Chunking strategy abstraction (Strategy Pattern)
+- Evaluation pipeline (retrieval + generation metrics)
+- Docugami KG-RAG evaluation dataset
+- SQLite-based evaluation result storage
+- Failure mode classification
 
 ## 2. System Workflow
 
@@ -71,6 +78,8 @@ Current development stack:
 - OpenAI/Anthropic APIs - LLM providers
 - Streamlit - web interface
 - CLI interface - local querying
+- RAGAS - evaluation framework
+- SQLite - evaluation result storage
 
 Note: The current stack prioritizes simplicity and local development speed. Future iterations may introduce scalable vector stores and production infrastructure.
 
@@ -175,7 +184,7 @@ This repository documents a **10-week build of a production-oriented enterprise 
   Implement the basic retrieval-augmented generation workflow:  
   document ingestion → chunking → embeddings → vector search → grounded answers with citations.
 
-- [ ] **Week 2 - Retrieval Evaluation**  
+- [x] **Week 2 - Retrieval Evaluation**  
   Build an evaluation dataset and baseline metrics for:  
   retrieval recall, answer grounding, and answer correctness.
 
@@ -216,17 +225,13 @@ This repository documents a **10-week build of a production-oriented enterprise 
 
 Production AI systems require continuous evaluation.
 
-Upcoming work will introduce an evaluation pipeline measuring:
+Implemented in Week 2:
+- RAGAS metrics (Faithfulness, Answer Relevance, Context Recall, Answer Correctness)
 
-- retrieval recall
-- answer grounding
-- answer correctness
+- Deterministic retrieval metrics (Hit Rate@K, MRR)
+- Three-layer evaluation framework
+- Baseline results: context_recall=0.47, faithfulness=0.84
 
-Planned evaluation approaches include:
-
-- RAGAS metrics
-- curated evaluation datasets
-- LLM-as-judge evaluation
 
 ## 10. Contributing
 
