@@ -217,6 +217,7 @@ data/eval/*
 README1.md
 
 evaluation_runs.db
+data/evaluation_runs.db
 data/evaluation/*.csv
 
 data/eval/*
