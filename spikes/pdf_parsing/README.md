@@ -1,64 +1,162 @@
 ## Goal
 
-Evaluate PDF parsing tools for 10-Q documents to select the most suitable parser for the enterprise RAG ingestion pipeline.
+Evaluate PDF parsing solutions for 10-Q documents and select a parser that meets the requirements for an enterprise RAG ingestion pipeline.
+
+The evaluation focuses on:
+
+* Structural correctness (especially tables)
+
+* Signal-to-noise ratio (header/footer handling)
+
+* Semantic labeling (section boundaries)
 
 ## Test Setup
 
-The spike will mainly test the below three aspects:
+We evaluate parsing quality across representative page types in a 10-Q document:
 
-1.	Whether tables are extracted
-2.	Whether header or footer is detected as text
-3.	Whether section heading is labeled as Title
+* Page 6: Balance sheet (dense table, multi-level headers)
+* Page 9: Pure narrative text
+* Page 17: Mixed layout (heading + paragraph + table)
 
-Pages to be tested:
+Evaluation criteria:
 
-- Page 6 contains balance sheet
-- Page 9 contains pure text
-- Page 17 is a combination of heading, paragraph, and table
+1. Table extraction quality (structure, completeness)
+2. Header/Footer handling (noise vs content)
+3. Section heading classification (semantic correctness)
 
-## Results
-- Table: The results does not have table elements.
 
-- Header/Footer is detected as Title.
+## Baseline: Unstructured (fast)
 
-    This introduces data pollution, as repeated headers/footers are treated as meaningful content.
+### Findings
 
-	It can degrade retrieval quality in RAG by surfacing irrelevant or duplicated context.
+* Table extraction
+   * No table elements detected on balance sheet page
+   * Fails to capture structured financial data
 
-- Section heading is labeled as Title.
+* Header/Footer handling → 
+   * Misclassified as Title
+   * Introduces repeated, non-informative content
 
-Therefore, unstructured (fast) does not satisfy the requirements.
+* Heading classification
+   * Section headings labeled as Title (not ideal but usable)
+
+### Impact
+
+* Table extraction failure is a blocking issue for financial documents
+* Header/footer misclassification leads to:
+
+   * Data pollution in embeddings
+   * Degraded retrieval relevance
+
+### Conclusion
+
+Unstructured (fast) is insufficient for structured financial documents and cannot be used in the ingestion pipeline.
+
 
 ## Decision
-- Choose Docling
 
-Docling uses a structure-aware pipeline for document understanding.
-For table extraction, it leverages models such as TableFormer (Vision Transformer-based) to explicitly model row/column relationships and cell structure.
+### Selected: Docling
+
+Docling adopts a structure-aware document understanding pipeline, including:
+
+* Layout detection (document-level segmentation)
+* Table structure modeling via Transformer-based models (e.g., TableFormer)
 
 
-In contrast, unstructured (hi_res) relies on detectron2-based layout detection, which performs region detection (e.g., identifying table areas) but does not model table structure itself.
+In contrast, Unstructured (hi_res):
 
-As a result:
-- Docling → structure-aware (can reconstruct table schema)
-- Unstructured hi_res → region detection (requires heuristic post-processing)
+* Uses detectron2 for region detection only
+* Does not model table structure explicitly
 
-Docling is therefore better suited for financial documents with:
-- multi-column layouts
-- merged cells
-- complex table structures
+### Key Difference
+
+* Docling: Structure-aware (table = grid with semantics)
+* Unstructured: Region detection (table = bounding box + heuristics)
+
+
+### Rationale
+
+Docling is better aligned with requirements for financial documents:
+
+* Accurate table reconstruction (including multi-level headers)
+* Consistent handling of mixed layouts
+* Cleaner semantic signals for downstream chunking
 
 ## Risks
-Parsing speed:
 
-Docling introduces heavier models (layout + table structure), which may increase processing latency compared to lightweight parsing approaches.
+Parsing latency
 
-This is considered a Week 9/10 infrastructure problem (optimization, batching, GPU usage), not a blocker for initial correctness validation.
+* Docling introduces heavier models (layout + table structure)
+* Expected to be slower than lightweight parsers
 
-## Next Step
-Run Docling on the same three pages (6, 9, 17).
+This is treated as a Week 9/10 infrastructure concern:
 
-Evaluate:
+   * batching
+   * parallelization
+   * GPU acceleration
 
-- Table structure reconstruction quality
-- Handling of mixed layouts (heading + paragraph + table)
-- Consistency of element classification
+Not a blocker for correctness validation.
+
+
+## Validation: Docling Results
+
+Docling was evaluated on the same three pages.
+
+### Table Extraction
+* Balance sheet fully detected
+* Row/column structure correctly reconstructed
+* Multi-level headers preserved
+
+Conclusion: Meets requirements for structured financial data ingestion.
+
+### Header/Footer Handling 
+
+* Header and footer content is included in output
+
+Impact:
+
+* Adds noise to embeddings and retrieval
+
+Mitigation:
+
+* Can be handled via post-processing:
+
+   * position-based filtering (bbox / page margin)
+   * frequency-based filtering (repeated text across pages)
+
+Conclusion: Acceptable with downstream filtering.
+
+### Heading Classification
+
+* Section headings correctly labeled as section_header
+
+Impact:
+* Enables reliable section-based chunking
+* Improves retrieval precision and context grouping
+
+## Final Assessment
+
+Docling satisfies all core correctness requirements for 10-Q ingestion:
+
+* Accurate table extraction (critical path)
+* Acceptable noise profile (manageable via post-processing)
+* Reliable semantic labeling (improves downstream RAG quality)
+
+It is the appropriate choice for the current pipeline.
+
+## Next Steps
+
+* Implement post-processing layer:
+
+   * header/footer filtering
+   * table normalization (DataFrame → schema mapping)
+
+* Benchmark performance:
+
+   * per-page latency
+   * scalability under batch ingestion
+
+* Integrate into RAG pipeline:
+
+   * section-aware chunking
+   * table-aware retrieval strategy
