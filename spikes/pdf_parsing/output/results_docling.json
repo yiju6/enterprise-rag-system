@@ -1,0 +1,557 @@
+{
+  "source_file": "/Users/zoeju/Desktop/enterprise-rag-system/spikes/pdf_parsing/../../data/uploads/2022 Q3 AAPL.pdf",
+  "parser": "docling",
+  "pages": {
+    "6": [
+      {
+        "type": "section_header",
+        "content": "Apple Inc.",
+        "bbox": [
+          286.7589547859595,
+          729.6230644887269,
+          325.4633424209642,
+          725.1821995413034
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "section_header",
+        "content": "CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited)",
+        "bbox": [
+          185.12927874752947,
+          711.3980665441018,
+          427.0851092152862,
+          706.9572015966783
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "(In millions, except number of shares which are reflected in thousands and par value)",
+        "bbox": [
+          153.6995947920997,
+          701.9520228394058,
+          458.509504546312,
+          697.5081285362153
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "table",
+        "content": null,
+        "bbox": [
+          16.667783737182617,
+          681.90234375,
+          595.557861328125,
+          202.69049072265625
+        ],
+        "table_markdown": "|                                                                                                                                                                      | June 25, 2022                         | September 25, 2021                    |\n|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|---------------------------------------|\n| ASSETS:                                                                                                                                                              | ASSETS:                               | ASSETS:                               |\n| Current assets:                                                                                                                                                      |                                       |                                       |\n| Cash and cash equivalents                                                                                                                                            | $ 27,502                              | $ 34,940                              |\n| Marketable securities                                                                                                                                                | 20,729                                | 27,699                                |\n| Accounts receivable, net                                                                                                                                             | 21,803                                | 26,278                                |\n| Inventories                                                                                                                                                          | 5,433                                 | 6,580                                 |\n| Vendor non-trade receivables                                                                                                                                         | 20,439                                | 25,228                                |\n| Other current assets                                                                                                                                                 | 16,386                                | 14,111                                |\n| Total current assets                                                                                                                                                 | 112,292                               | 134,836                               |\n| Non-current assets:                                                                                                                                                  |                                       |                                       |\n| Marketable securities                                                                                                                                                | 131,077                               | 127,877                               |\n| Property, plant and equipment, net                                                                                                                                   | 40,335                                | 39,440                                |\n| Other non-current assets                                                                                                                                             | 52,605                                | 48,849                                |\n| Total non-current assets                                                                                                                                             | 224,017                               | 216,166                               |\n| Total assets                                                                                                                                                         | $ 336,309                             | $ 351,002                             |\n| LIABILITIES AND SHAREHOLDERS' EQUITY:                                                                                                                                | LIABILITIES AND SHAREHOLDERS' EQUITY: | LIABILITIES AND SHAREHOLDERS' EQUITY: |\n| Current liabilities:                                                                                                                                                 |                                       |                                       |\n| Accounts payable                                                                                                                                                     | $ 48,343                              | $ 54,763                              |\n| Other current liabilities                                                                                                                                            | 48,811                                | 47,493                                |\n| Deferred revenue                                                                                                                                                     | 7,728                                 | 7,612                                 |\n| Commercial paper                                                                                                                                                     | 10,982                                | 6,000                                 |\n| Term debt                                                                                                                                                            | 14,009                                | 9,613                                 |\n| Total current liabilities                                                                                                                                            | 129,873                               | 125,481                               |\n| Non-current liabilities:                                                                                                                                             |                                       |                                       |\n| Term debt                                                                                                                                                            | 94,700                                | 109,106                               |\n| Other non-current liabilities                                                                                                                                        | 53,629                                | 53,325                                |\n| Total non-current liabilities                                                                                                                                        | 148,329                               | 162,431                               |\n| Total liabilities                                                                                                                                                    | 278,202                               | 287,912                               |\n| Commitments and contingencies                                                                                                                                        |                                       |                                       |\n| Shareholders' equity:                                                                                                                                                |                                       |                                       |\n| Common stock and additional paid-in capital, $0.00001 par value: 50,400,000 shares authorized; 16,095,378 and 16,426,786 shares issued and outstanding, respectively | 62,115                                | 57,365                                |\n| Retained earnings                                                                                                                                                    | 5,289                                 | 5,562                                 |\n| Accumulated other comprehensive income/(loss)                                                                                                                        | (9,297)                               | 163                                   |\n| Total shareholders' equity                                                                                                                                           | 58,107                                | 63,090                                |\n| Total liabilities and shareholders' equity                                                                                                                           | $ 336,309                             | $ 351,002                             |",
+        "table_data": [
+          {
+            "": "ASSETS:",
+            "June 25, 2022": "ASSETS:",
+            "September 25, 2021": "ASSETS:"
+          },
+          {
+            "": "Current assets:",
+            "June 25, 2022": "",
+            "September 25, 2021": ""
+          },
+          {
+            "": "Cash and cash equivalents",
+            "June 25, 2022": "$ 27,502",
+            "September 25, 2021": "$ 34,940"
+          },
+          {
+            "": "Marketable securities",
+            "June 25, 2022": "20,729",
+            "September 25, 2021": "27,699"
+          },
+          {
+            "": "Accounts receivable, net",
+            "June 25, 2022": "21,803",
+            "September 25, 2021": "26,278"
+          },
+          {
+            "": "Inventories",
+            "June 25, 2022": "5,433",
+            "September 25, 2021": "6,580"
+          },
+          {
+            "": "Vendor non-trade receivables",
+            "June 25, 2022": "20,439",
+            "September 25, 2021": "25,228"
+          },
+          {
+            "": "Other current assets",
+            "June 25, 2022": "16,386",
+            "September 25, 2021": "14,111"
+          },
+          {
+            "": "Total current assets",
+            "June 25, 2022": "112,292",
+            "September 25, 2021": "134,836"
+          },
+          {
+            "": "Non-current assets:",
+            "June 25, 2022": "",
+            "September 25, 2021": ""
+          },
+          {
+            "": "Marketable securities",
+            "June 25, 2022": "131,077",
+            "September 25, 2021": "127,877"
+          },
+          {
+            "": "Property, plant and equipment, net",
+            "June 25, 2022": "40,335",
+            "September 25, 2021": "39,440"
+          },
+          {
+            "": "Other non-current assets",
+            "June 25, 2022": "52,605",
+            "September 25, 2021": "48,849"
+          },
+          {
+            "": "Total non-current assets",
+            "June 25, 2022": "224,017",
+            "September 25, 2021": "216,166"
+          },
+          {
+            "": "Total assets",
+            "June 25, 2022": "$ 336,309",
+            "September 25, 2021": "$ 351,002"
+          },
+          {
+            "": "LIABILITIES AND SHAREHOLDERS' EQUITY:",
+            "June 25, 2022": "LIABILITIES AND SHAREHOLDERS' EQUITY:",
+            "September 25, 2021": "LIABILITIES AND SHAREHOLDERS' EQUITY:"
+          },
+          {
+            "": "Current liabilities:",
+            "June 25, 2022": "",
+            "September 25, 2021": ""
+          },
+          {
+            "": "Accounts payable",
+            "June 25, 2022": "$ 48,343",
+            "September 25, 2021": "$ 54,763"
+          },
+          {
+            "": "Other current liabilities",
+            "June 25, 2022": "48,811",
+            "September 25, 2021": "47,493"
+          },
+          {
+            "": "Deferred revenue",
+            "June 25, 2022": "7,728",
+            "September 25, 2021": "7,612"
+          },
+          {
+            "": "Commercial paper",
+            "June 25, 2022": "10,982",
+            "September 25, 2021": "6,000"
+          },
+          {
+            "": "Term debt",
+            "June 25, 2022": "14,009",
+            "September 25, 2021": "9,613"
+          },
+          {
+            "": "Total current liabilities",
+            "June 25, 2022": "129,873",
+            "September 25, 2021": "125,481"
+          },
+          {
+            "": "Non-current liabilities:",
+            "June 25, 2022": "",
+            "September 25, 2021": ""
+          },
+          {
+            "": "Term debt",
+            "June 25, 2022": "94,700",
+            "September 25, 2021": "109,106"
+          },
+          {
+            "": "Other non-current liabilities",
+            "June 25, 2022": "53,629",
+            "September 25, 2021": "53,325"
+          },
+          {
+            "": "Total non-current liabilities",
+            "June 25, 2022": "148,329",
+            "September 25, 2021": "162,431"
+          },
+          {
+            "": "Total liabilities",
+            "June 25, 2022": "278,202",
+            "September 25, 2021": "287,912"
+          },
+          {
+            "": "Commitments and contingencies",
+            "June 25, 2022": "",
+            "September 25, 2021": ""
+          },
+          {
+            "": "Shareholders' equity:",
+            "June 25, 2022": "",
+            "September 25, 2021": ""
+          },
+          {
+            "": "Common stock and additional paid-in capital, $0.00001 par value: 50,400,000 shares authorized; 16,095,378 and 16,426,786 shares issued and outstanding, respectively",
+            "June 25, 2022": "62,115",
+            "September 25, 2021": "57,365"
+          },
+          {
+            "": "Retained earnings",
+            "June 25, 2022": "5,289",
+            "September 25, 2021": "5,562"
+          },
+          {
+            "": "Accumulated other comprehensive income/(loss)",
+            "June 25, 2022": "(9,297)",
+            "September 25, 2021": "163"
+          },
+          {
+            "": "Total shareholders' equity",
+            "June 25, 2022": "58,107",
+            "September 25, 2021": "63,090"
+          },
+          {
+            "": "Total liabilities and shareholders' equity",
+            "June 25, 2022": "$ 336,309",
+            "September 25, 2021": "$ 351,002"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "content": "See accompanying Notes to Condensed Consolidated Financial Statements.",
+        "bbox": [
+          168.7710740923716,
+          186.25208099890415,
+          443.4353849163379,
+          181.80818669571408
+        ],
+        "table_markdown": null,
+        "table_data": null
+      }
+    ],
+    "9": [
+      {
+        "type": "section_header",
+        "content": "Apple Inc.",
+        "bbox": [
+          286.7589547859595,
+          729.6231897207217,
+          325.4633424209642,
+          725.1823247732982
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "section_header",
+        "content": "Notes to Condensed Consolidated Financial Statements (Unaudited)",
+        "bbox": [
+          174.69841717389897,
+          711.3981917760966,
+          437.5212235033239,
+          706.9573268286731
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "section_header",
+        "content": "Note 1 - Summary of Significant Accounting Policies",
+        "bbox": [
+          18.224997320625082,
+          691.1481940598464,
+          221.81261509046394,
+          686.7073291124229
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "section_header",
+        "content": "Basis of Presentation and Preparation",
+        "bbox": [
+          18.224997320625082,
+          672.9231961152213,
+          164.96232654191374,
+          668.4823311677978
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "The condensed consolidated financial statements include the accounts of Apple Inc. and its wholly owned subsidiaries (collectively 'Apple' or the 'Company'). Intercompany accounts and transactions have been eliminated. In the opinion of the Company's management, the condensed consolidated financial statements reflect  all  adjustments,  which  are  normal  and  recurring  in  nature,  necessary  for  fair  financial  statement  presentation.  The  preparation  of  these  condensed consolidated  financial  statements  and  accompanying  notes  in  conformity  with  U.S.  generally  accepted  accounting  principles  requires  management  to  make estimates and assumptions that affect the amounts reported. Actual results could differ materially from those estimates. Certain prior period amounts in the condensed consolidated financial statements and accompanying notes have been reclassified to conform to the current period's presentation. These condensed consolidated financial statements and accompanying notes should be read in conjunction with the Company's annual consolidated financial statements and accompanying notes included in its Annual Report on Form 10-K for the fiscal year ended September 25, 2021.",
+        "bbox": [
+          18.224997320625082,
+          658.0771530195252,
+          593.9972090313089,
+          585.4582664049603
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "The Company's fiscal year is the 52- or 53-week period that ends on the last Saturday of September. An additional week is included in the first fiscal quarter every five or six years to realign the Company's fiscal quarters with calendar quarters. The Company's fiscal years 2022 and 2021 span 52 weeks each. Unless otherwise stated,  references  to  particular  years,  quarters,  months  and  periods  refer  to  the  Company's  fiscal  years  ended  in  September  and  the  associated quarters, months and periods of those fiscal years.",
+        "bbox": [
+          18.224997320625082,
+          569.6521629918998,
+          593.9987381761364,
+          536.1832719620852
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "section_header",
+        "content": "Earnings Per Share",
+        "bbox": [
+          18.224997320625082,
+          514.298214004596,
+          92.95618748260678,
+          509.85734905717254
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "The following table shows the computation of basic and diluted earnings per share for the three- and nine-month periods ended June 25, 2022 and June 26, 2021 (net income in millions and shares in thousands):",
+        "bbox": [
+          18.224997320625082,
+          499.45217090889946,
+          593.9998464585115,
+          485.55827767146
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "table",
+        "content": null,
+        "bbox": [
+          17.35858726501465,
+          477.3728942871094,
+          595.1727294921875,
+          335.3612976074219
+        ],
+        "table_markdown": "|                                           | Three Months Ended   | Three Months Ended   | Nine Months Ended   | Nine Months Ended   |\n|-------------------------------------------|----------------------|----------------------|---------------------|---------------------|\n|                                           | June 25, 2022        | June 26, 2021        | June 25, 2022       | June 26, 2021       |\n| Numerator:                                |                      |                      |                     |                     |\n| Net income                                | $ 19,442             | $ 21,744             | $ 79,082            | $ 74,129            |\n| Denominator:                              |                      |                      |                     |                     |\n| Weighted-average basic shares outstanding | 16,162,945           | 16,629,371           | 16,277,824          | 16,772,656          |\n| Effect of dilutive securities             | 99,258               | 152,364              | 117,113             | 168,871             |\n| Weighted-average diluted shares           | 16,262,203           | 16,781,735           | 16,394,937          | 16,941,527          |\n| Basic earnings per share                  | $ 1.20               | $ 1.31               | $ 4.86              | $ 4.42              |\n| Diluted earnings per share                | $ 1.20               | $ 1.30               | $ 4.82              | $ 4.38              |",
+        "table_data": [
+          {
+            "": "Numerator:",
+            "Three Months Ended.June 25, 2022": "",
+            "Three Months Ended.June 26, 2021": "",
+            "Nine Months Ended.June 25, 2022": "",
+            "Nine Months Ended.June 26, 2021": ""
+          },
+          {
+            "": "Net income",
+            "Three Months Ended.June 25, 2022": "$ 19,442",
+            "Three Months Ended.June 26, 2021": "$ 21,744",
+            "Nine Months Ended.June 25, 2022": "$ 79,082",
+            "Nine Months Ended.June 26, 2021": "$ 74,129"
+          },
+          {
+            "": "Denominator:",
+            "Three Months Ended.June 25, 2022": "",
+            "Three Months Ended.June 26, 2021": "",
+            "Nine Months Ended.June 25, 2022": "",
+            "Nine Months Ended.June 26, 2021": ""
+          },
+          {
+            "": "Weighted-average basic shares outstanding",
+            "Three Months Ended.June 25, 2022": "16,162,945",
+            "Three Months Ended.June 26, 2021": "16,629,371",
+            "Nine Months Ended.June 25, 2022": "16,277,824",
+            "Nine Months Ended.June 26, 2021": "16,772,656"
+          },
+          {
+            "": "Effect of dilutive securities",
+            "Three Months Ended.June 25, 2022": "99,258",
+            "Three Months Ended.June 26, 2021": "152,364",
+            "Nine Months Ended.June 25, 2022": "117,113",
+            "Nine Months Ended.June 26, 2021": "168,871"
+          },
+          {
+            "": "Weighted-average diluted shares",
+            "Three Months Ended.June 25, 2022": "16,262,203",
+            "Three Months Ended.June 26, 2021": "16,781,735",
+            "Nine Months Ended.June 25, 2022": "16,394,937",
+            "Nine Months Ended.June 26, 2021": "16,941,527"
+          },
+          {
+            "": "Basic earnings per share",
+            "Three Months Ended.June 25, 2022": "$ 1.20",
+            "Three Months Ended.June 26, 2021": "$ 1.31",
+            "Nine Months Ended.June 25, 2022": "$ 4.86",
+            "Nine Months Ended.June 26, 2021": "$ 4.42"
+          },
+          {
+            "": "Diluted earnings per share",
+            "Three Months Ended.June 25, 2022": "$ 1.20",
+            "Three Months Ended.June 26, 2021": "$ 1.30",
+            "Nine Months Ended.June 25, 2022": "$ 4.82",
+            "Nine Months Ended.June 26, 2021": "$ 4.38"
+          }
+        ]
+      }
+    ],
+    "17": [
+      {
+        "type": "section_header",
+        "content": "Item 2.    Management's Discussion and Analysis of Financial Condition and Results of Operations",
+        "bbox": [
+          18.224997320625082,
+          720.8477928383636,
+          396.59144387429393,
+          716.4069278909392
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "This  section  and  other  parts  of  this  Quarterly  Report  on  Form  10-Q  ('Form  10-Q')  contain  forward-looking  statements,  within  the  meaning  of  the  Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. For example, statements in this Form 10-Q regarding the potential future impact of the COVID-19 pandemic on the Company's business and results of operations are forward-looking statements . Forward-looking statements can also be identified by words such as 'future,' 'anticipates,' 'believes,' 'estimates,' 'expects,' 'intends,' 'plans,' 'predicts,' 'will,' 'would,' 'could,' 'can,' 'may,' and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of the Company's Annual Report on Form 10-K for the fiscal year ended September 25, 2021 (the '2021 Form 10-K') under the heading 'Risk Factors.' The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.",
+        "bbox": [
+          18.224997320625082,
+          703.2977948176122,
+          594.0000128459926,
+          621.2319386245636
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "Unless otherwise stated, all information presented herein is based on the Company's fiscal calendar, and references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the 'Company' and 'Apple' as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.",
+        "bbox": [
+          18.224997320625082,
+          604.7478059318619,
+          593.998697338641,
+          581.4069431159387
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "The following discussion should be read in conjunction with the 2021 Form 10-K filed with the U.S. Securities and Exchange Commission (the 'SEC') and the condensed consolidated financial statements and accompanying notes included in Part I, Item 1 of this Form 10-Q.",
+        "bbox": [
+          18.224997320625082,
+          564.922810423237,
+          593.9960574814388,
+          551.0319465415632
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "section_header",
+        "content": "Available Information",
+        "bbox": [
+          18.224997320625082,
+          529.8228143817378,
+          100.28889950813972,
+          525.3819494343134
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "The  Company  periodically  provides  certain  information  for  investors on  its  corporate  website,  www.apple.com,  and  its  investor  relations  website, investor.apple.com.  This  includes  press  releases  and  other  information  about  financial  performance,  information  on  environmental,  social  and  corporate governance matters, and details related to the Company's annual meeting of shareholders. The information contained on the websites referenced in this Form 10-Q is not incorporated by reference into this filing. Further, the Company's references to website URLs are intended to be inactive textual references only.",
+        "bbox": [
+          18.224997320625082,
+          514.3017713621666,
+          593.999930496002,
+          480.8328803323511
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "section_header",
+        "content": "Business Seasonality and Product Introductions",
+        "bbox": [
+          18.224997320625082,
+          459.62282229873745,
+          205.0074843457094,
+          455.18195735131303
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "The Company has historically experienced higher net  sales  in  its  first  quarter  compared  to  other  quarters  in  its  fiscal  year  due  in  part  to  seasonal  holiday demand. Additionally, new product and service introductions can significantly impact net sales, cost of sales and operating expenses. The timing of product introductions can also impact the Company's net sales to its indirect distribution channels as these channels are filled with new inventory following a product launch, and channel inventory of an older product often declines as the launch of a newer product approaches. Net sales can also be affected when consumers and distributors anticipate a product introduction.",
+        "bbox": [
+          18.224997320625082,
+          444.1017792791663,
+          593.9975001587761,
+          401.1828893150996
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "section_header",
+        "content": "Quarterly Highlights",
+        "bbox": [
+          18.224997320625082,
+          379.29783135761136,
+          96.0846525597854,
+          374.85696641018876
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "Total  net  sales  increased  2%  or  $1.5  billion  during  the  third  quarter  of  2022  compared  to  the  same  quarter  in  2021,  driven  primarily  by  higher  net  sales  of Services and iPhone, partially offset by lower net sales of Mac and Wearables, Home and Accessories. The weakness in foreign currencies relative to the U.S. dollar had an unfavorable impact on all Products and Services net sales during the third quarter of 2022.",
+        "bbox": [
+          18.224997320625082,
+          364.4517882619166,
+          593.9960596414384,
+          340.4328961663505
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "At the end of the third quarter of 2022, the Company introduced an all-new MacBook Air and an updated 13-inch MacBook Pro ,  both powered by the new Apple M2 chip. The Company also announced iOS 16, macOS Ventura, iPadOS 16 and watchOS 9, updates to its operating systems that are expected to be available in the fall of 2022. ® ® ® ® ®",
+        "bbox": [
+          18.224997320625082,
+          325.71187479551554,
+          593.9992111485832,
+          299.25790080997467
+        ],
+        "table_markdown": null,
+        "table_data": null
+      },
+      {
+        "type": "text",
+        "content": "The Company repurchased $21.7 billion of its common stock and paid dividends and dividend equivalents of $3.8 billion during the third quarter of 2022.",
+        "bbox": [
+          18.224997320625082,
+          283.45179739691594,
+          562.6137227456684,
+          279.00790309372496
+        ],
+        "table_markdown": null,
+        "table_data": null
+      }
+    ]
+  }
+}
