@@ -1,28 +1,25 @@
-''' Extract text from various file formats, embed the text using a specified embedding model, and ingest it into the vector database.
+''' 
+Extract text from various file formats, embed the text using a specified embedding model, and ingest it into the vector database.
 '''
 
-from pypdf import PdfReader
 from .config import settings
 from openai import OpenAI
 import chromadb
 from .models import Chunk
-from .chunker import ChunkingStrategy, FixedSizeChunker
-import os
+from .chunker import DocumentChunker
 import logging
-
+from .parser_router import ParserRouter
+from .pdf_parser import PDFParser
+from pathlib import Path
 
 logging.getLogger("chromadb").setLevel(logging.ERROR)
 
 client = OpenAI(api_key=settings.openai_api_key)
 chroma_client = chromadb.PersistentClient(path=settings.chroma_db_path)
 
-def extract_text_from_pdf(file_path: str) -> str:
-    """Extract text from a PDF file."""
-    reader = PdfReader(file_path)
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text() + "\n"
-    return text
+# Default shared instances for production usage.
+default_router = ParserRouter(parsers=[PDFParser()])
+default_chunker = DocumentChunker()
 
 def get_embeddings(chunks: list[Chunk]) -> list[list[float]]:
     """Get embeddings for each text chunk using the specified embedding model."""
@@ -33,32 +30,59 @@ def get_embeddings(chunks: list[Chunk]) -> list[list[float]]:
         embeddings.append(client.embeddings.create(input = [text], model=settings.embedding_model).data[0].embedding)
     return embeddings
 
+def _clean_chroma_metadata(metadata: dict) -> dict:
+    """
+    ChromaDB metadata only supports str | int | float | bool.
+    Drop None and stringify unsupported values defensively.
+    """
+    cleaned = {}
+
+    for key, value in metadata.items():
+        if value is None:
+            continue
+
+        if isinstance(value, (str, int, float, bool)):
+            cleaned[key] = value
+        else:
+            cleaned[key] = str(value)
+
+    return cleaned
+
 def store_in_chromadb(chunks: list[Chunk], embeddings: list[list[float]]) -> None:
     """Store the text chunks and their embeddings in ChromaDB."""
 
     # Create or get the collection.
     collection = chroma_client.get_or_create_collection(name="doc")
 
-    # Add documents to the collection
-    for i, (chunk, embedding) in enumerate(zip(chunks, embeddings)):
+    for chunk, embedding in zip(chunks, embeddings):
+        metadata = _clean_chroma_metadata(
+            {
+                "content_type": chunk.content_type,
+                "source_file": chunk.source_file,
+                "doc_type": chunk.doc_type,
+                "chunk_index": chunk.chunk_index,
+                "tenant_id": chunk.tenant_id or "",
+                "access_level": chunk.access_level or "",
+                **chunk.metadata,
+            }
+        )
+
         collection.add(
             documents=[chunk.content],
             embeddings=[embedding],
             ids=[f"{chunk.source_file}_{chunk.chunk_index}"],
-            metadatas = [{
-                "source_file": chunk.source_file, 
-                "doc_type": chunk.doc_type, 
-                "chunk_index": chunk.chunk_index, 
-                "tenant_id": chunk.tenant_id or "", 
-                "access_level": chunk.access_level or ""
-                }]
+            metadatas=[metadata],
         )
 
-def ingest_pdf(file_path: str, chunker: ChunkingStrategy = None) -> None:
-    if chunker is None:
-        chunker = FixedSizeChunker()
 
-    text = extract_text_from_pdf(file_path)
-    chunks = chunker.chunk(text, source_file=os.path.basename(file_path), doc_type="pdf")
+def ingest(file_path: Path, router: ParserRouter = default_router,
+    chunker: DocumentChunker = default_chunker,) -> None:
+    """
+    End-to-end ingestion pipeline:
+    ParserRouter.parse(file_path) -> DocumentChunker.chunk(document)
+    -> embeddings -> ChromaDB
+    """
+    document = router.parse(file_path)
+    chunks = chunker.chunk(document)
     embeddings = get_embeddings(chunks)
-    store_in_chromadb(chunks, embeddings) 
+    store_in_chromadb(chunks, embeddings)
