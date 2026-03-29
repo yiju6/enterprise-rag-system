@@ -1,0 +1,614 @@
+{
+  "6": {
+    "Tables": [],
+    "NarrativeText": [
+      {
+        "type": "NarrativeText",
+        "text": "CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited) (In millions, except number of shares which are reflected in thousands and par value)",
+        "page_number": 6
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Cash and cash equivalents Marketable securities Accounts receivable, net Inventories Vendor non-trade receivables Other current assets",
+        "page_number": 6
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Shareholders’ equity:",
+        "page_number": 6
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Common stock and additional paid-in capital, $0.00001 par value: 50,400,000 shares authorized; 16,095,378",
+        "page_number": 6
+      },
+      {
+        "type": "NarrativeText",
+        "text": "and 16,426,786 shares issued and outstanding, respectively",
+        "page_number": 6
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Retained earnings Accumulated other comprehensive income/(loss)",
+        "page_number": 6
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Total shareholders’ equity",
+        "page_number": 6
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Total liabilities and shareholders’ equity",
+        "page_number": 6
+      }
+    ],
+    "Title": [
+      {
+        "type": "Title",
+        "text": "Apple Inc.",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "ASSETS:",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Current assets:",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Total current assets",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Non-current assets:",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Marketable securities Property, plant and equipment, net Other non-current assets",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Total non-current assets",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Total assets",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "LIABILITIES AND SHAREHOLDERS’ EQUITY:",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Current liabilities:",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Accounts payable Other current liabilities Deferred revenue Commercial paper Term debt",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Total current liabilities",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Non-current liabilities:",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Term debt Other non-current liabilities",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Total non-current liabilities",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Total liabilities",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Commitments and contingencies",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "See accompanying Notes to Condensed Consolidated Financial Statements.",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "Apple Inc. | Q3 2022 Form 10-Q | 3",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "$",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "$",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "$",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "$",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "June 25, 2022",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "27,502 $ 20,729 21,803 5,433 20,439 16,386 112,292",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "131,077 40,335 52,605 224,017 336,309 $",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "48,343 $ 48,811 7,728 10,982 14,009",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "129,873",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "94,700 53,629 148,329 278,202",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "62,115 5,289 (9,297) 58,107 336,309 $",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Title",
+        "text": "September 25, 2021",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "34,940 27,699 26,278 6,580 25,228 14,111 134,836",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "127,877 39,440 48,849 216,166 351,002",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "54,763 47,493 7,612 6,000 9,613",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "125,481",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "109,106 53,325 162,431 287,912",
+        "text_as_html": null,
+        "page_number": 6
+      },
+      {
+        "type": "Text",
+        "text": "57,365 5,562 163 63,090 351,002",
+        "text_as_html": null,
+        "page_number": 6
+      }
+    ]
+  },
+  "9": {
+    "Tables": [],
+    "NarrativeText": [
+      {
+        "type": "NarrativeText",
+        "text": "The condensed consolidated financial statements include the accounts of Apple Inc. and its wholly owned subsidiaries (collectively “Apple” or the “Company”). Intercompany accounts and transactions have been eliminated. In the opinion of the Company’s management, the condensed consolidated financial statements reflect all adjustments, which are normal and recurring in nature, necessary for fair financial statement presentation. The preparation of these condensed consolidated financial statements and accompanying notes in conformity with U.S. generally accepted accounting principles requires management to make estimates and assumptions that affect the amounts reported. Actual results could differ materially from those estimates. Certain prior period amounts in the condensed consolidated financial statements and accompanying notes have been reclassified to conform to the current period’s presentation. These condensed consolidated financial statements and accompanying notes should be read in conjunction with the Company’s annual consolidated financial statements and accompanying notes included in its Annual Report on Form 10-K for the fiscal year ended September 25, 2021.",
+        "page_number": 9
+      },
+      {
+        "type": "NarrativeText",
+        "text": "The Company’s fiscal year is the 52- or 53-week period that ends on the last Saturday of September. An additional week is included in the first fiscal quarter every five or six years to realign the Company’s fiscal quarters with calendar quarters. The Company’s fiscal years 2022 and 2021 span 52 weeks each. Unless otherwise stated, references to particular years, quarters, months and periods refer to the Company’s fiscal years ended in September and the associated quarters, months and periods of those fiscal years.",
+        "page_number": 9
+      },
+      {
+        "type": "NarrativeText",
+        "text": "The following table shows the computation of basic and diluted earnings per share for the three- and nine-month periods ended June 25, 2022 and June 26, 2021 (net income in millions and shares in thousands):",
+        "page_number": 9
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Weighted-average diluted shares",
+        "page_number": 9
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Basic earnings per share Diluted earnings per share",
+        "page_number": 9
+      }
+    ],
+    "Title": [
+      {
+        "type": "Title",
+        "text": "Apple Inc.",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Notes to Condensed Consolidated Financial Statements (Unaudited)",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Note 1 – Summary of Significant Accounting Policies",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Basis of Presentation and Preparation",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Earnings Per Share",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Three Months Ended",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Nine Months Ended",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "June 25, 2022",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "June 26, 2021",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "June 25, 2022",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "June 26, 2021",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Numerator:",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Net income",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "$",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "19,442 $",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "21,744 $",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "79,082 $",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "74,129",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Denominator:",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Weighted-average basic shares outstanding Effect of dilutive securities",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "16,162,945 99,258",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "16,629,371 152,364",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "16,277,824 117,113",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "16,772,656 168,871",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "16,262,203",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "16,781,735",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "16,394,937",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "16,941,527",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "$ $",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "1.20 $ 1.20 $",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "1.31 $ 1.30 $",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "4.86 $ 4.82 $",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Text",
+        "text": "4.42 4.38",
+        "text_as_html": null,
+        "page_number": 9
+      },
+      {
+        "type": "Title",
+        "text": "Apple Inc. | Q3 2022 Form 10-Q | 6",
+        "text_as_html": null,
+        "page_number": 9
+      }
+    ]
+  },
+  "17": {
+    "Tables": [],
+    "NarrativeText": [
+      {
+        "type": "NarrativeText",
+        "text": "This section and other parts of this Quarterly Report on Form 10-Q (“Form 10-Q”) contain forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. For example, statements in this Form 10-Q regarding the potential future impact of the COVID-19 pandemic on the Company’s business and results of operations are forward-looking statements. Forward-looking statements can also be identified by words such as “future,” “anticipates,” “believes,” “estimates,” “expects,” “intends,” “plans,” “predicts,” “will,” “would,” “could,” “can,” “may,” and similar terms. Forward-looking statements are not guarantees of future performance and the Company’s actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of the Company’s Annual Report on Form 10-K for the fiscal year ended September 25, 2021 (the “2021 Form 10-K”) under the heading “Risk Factors.” The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.",
+        "page_number": 17
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Unless otherwise stated, all information presented herein is based on the Company’s fiscal calendar, and references to particular years, quarters, months or periods refer to the Company’s fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the “Company” and “Apple” as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.",
+        "page_number": 17
+      },
+      {
+        "type": "NarrativeText",
+        "text": "The following discussion should be read in conjunction with the 2021 Form 10-K filed with the U.S. Securities and Exchange Commission (the “SEC”) and the condensed consolidated financial statements and accompanying notes included in Part I, Item 1 of this Form 10-Q.",
+        "page_number": 17
+      },
+      {
+        "type": "NarrativeText",
+        "text": "The Company periodically provides certain information for investors on its corporate website, www.apple.com, and its investor relations website, investor.apple.com. This includes press releases and other information about financial performance, information on environmental, social and corporate governance matters, and details related to the Company’s annual meeting of shareholders. The information contained on the websites referenced in this Form 10-Q is not incorporated by reference into this filing. Further, the Company’s references to website URLs are intended to be inactive textual references only.",
+        "page_number": 17
+      },
+      {
+        "type": "NarrativeText",
+        "text": "The Company has historically experienced higher net sales in its first quarter compared to other quarters in its fiscal year due in part to seasonal holiday demand. Additionally, new product and service introductions can significantly impact net sales, cost of sales and operating expenses. The timing of product introductions can also impact the Company’s net sales to its indirect distribution channels as these channels are filled with new inventory following a product launch, and channel inventory of an older product often declines as the launch of a newer product approaches. Net sales can also be affected when consumers and distributors anticipate a product introduction.",
+        "page_number": 17
+      },
+      {
+        "type": "NarrativeText",
+        "text": "Total net sales increased 2% or $1.5 billion during the third quarter of 2022 compared to the same quarter in 2021, driven primarily by higher net sales of Services and iPhone, partially offset by lower net sales of Mac and Wearables, Home and Accessories. The weakness in foreign currencies relative to the U.S. dollar had an unfavorable impact on all Products and Services net sales during the third quarter of 2022.",
+        "page_number": 17
+      },
+      {
+        "type": "NarrativeText",
+        "text": "At the end of the third quarter of 2022, the Company introduced an all-new MacBook Air and an updated 13-inch MacBook Pro , both powered by the new Apple M2 chip. The Company also announced iOS 16, macOS Ventura, iPadOS 16 and watchOS 9, updates to its operating systems that are expected to be available in the fall of 2022.",
+        "page_number": 17
+      },
+      {
+        "type": "NarrativeText",
+        "text": "The Company repurchased $21.7 billion of its common stock and paid dividends and dividend equivalents of $3.8 billion during the third quarter of 2022.",
+        "page_number": 17
+      }
+    ],
+    "Title": [
+      {
+        "type": "Text",
+        "text": "Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Title",
+        "text": "Available Information",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Title",
+        "text": "Business Seasonality and Product Introductions",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Title",
+        "text": "Quarterly Highlights",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Text",
+        "text": "®",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Text",
+        "text": "®",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Text",
+        "text": "®",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Text",
+        "text": "®",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Text",
+        "text": "®",
+        "text_as_html": null,
+        "page_number": 17
+      },
+      {
+        "type": "Title",
+        "text": "Apple Inc. | Q3 2022 Form 10-Q | 14",
+        "text_as_html": null,
+        "page_number": 17
+      }
+    ]
+  }
+}
