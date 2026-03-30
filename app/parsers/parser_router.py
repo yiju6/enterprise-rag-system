@@ -2,8 +2,8 @@ from pathlib import Path
 from typing import Sequence
 
 from .base_parser import BaseParser
-from .exceptions import UnsupportedFileTypeError
-from .models import Document
+from ..exceptions import UnsupportedFileTypeError
+from ..models import Document
 
 
 class ParserRouter:

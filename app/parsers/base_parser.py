@@ -2,9 +2,12 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import ClassVar
 
-from .models import Document
+from ..models import Document
 import re
-from .exceptions import InvalidFilenameError
+from ..exceptions import InvalidFileNameError
+
+import inspect
+
 
 
 class BaseParser(ABC):
@@ -19,6 +22,9 @@ class BaseParser(ABC):
 
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
+    
+        if inspect.isabstract(cls):
+            return
 
         if cls.supported_extensions is None:
             raise TypeError(

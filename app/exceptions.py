@@ -6,6 +6,6 @@ class UnsupportedBlockTypeError(Exception):
     """Raised when chunker encounters unsupported block type."""
     pass
 
-class InvalidPDFFileNameError(Exception):
-    """Raised when company or quarter cannot be parsed from the PDF filename."""
+class InvalidFileNameError(Exception):
+    """Raised when company or quarter cannot be parsed from the filename."""
     pass

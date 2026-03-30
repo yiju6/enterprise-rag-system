@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import ClassVar
 
 from .docling_base_parser import DoclingBaseParser
-from .models import Document
+from ..models import Document
 
 
 class HTMLParser(DoclingBaseParser):

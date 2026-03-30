@@ -6,7 +6,7 @@ from docling.document_converter import DocumentConverter
 from docling_core.types.doc import TableItem
 
 from .base_parser import BaseParser
-from .models import Block, Document
+from ..models import Block, Document
 
 
 class DoclingBaseParser(BaseParser):

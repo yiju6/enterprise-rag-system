@@ -10,8 +10,8 @@ class Settings(BaseSettings):
     anthropic_model: str = ""
     embedding_model: str = ""
     evaluation_model: str = "gpt-4o-mini"
+    evaluation_db_path: str = "outputs/evaluation_runs/evaluation_runs.db"
     chroma_db_path: str = ""
-    evaluation_db_path: str = ""outputs/evaluation_runs/evaluation_runs.db""
     chunk_size: int = 800 
     chunk_overlap: int = 150
     top_k_results: int = 5
