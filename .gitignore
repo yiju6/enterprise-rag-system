@@ -226,3 +226,6 @@ data/eval/*
 
 data/evaluation/*results*.csv
 !data/evaluation/qna_data.csv
+
+outputs/
+logs/

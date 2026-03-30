@@ -56,5 +56,5 @@ def export_to_csv(run_id: str, output_path: str):
 if __name__ == "__main__":
     export_to_csv(
         run_id="week2_baseline_parallel",
-        output_path="data/evaluation/week2_baseline_results_parallel.csv"
+        output_path="output/evaluation_runs/week2_baseline_results_parallel.csv"
     )
