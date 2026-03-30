@@ -6,7 +6,6 @@ from typing import ClassVar
 
 from docling.document_converter import DocumentConverter
 from docling_core.types.doc import TableItem
-
 from .base_parser import BaseParser
 from .exceptions import InvalidPDFFileNameError
 from .models import Block, Document
@@ -16,70 +15,8 @@ class PDFParser(BaseParser):
     supported_extensions: ClassVar[list[str]] = [".pdf"]
     magic_bytes: ClassVar[bytes | None] = b"%PDF"
 
-    NON_TICKER_TOKENS: ClassVar[set[str]] = {
-        "SEC",
-        "10Q",
-        "10K",
-        "FY",
-        "ANNUAL",
-        "QUARTERLY",
-    }
-
     def __init__(self) -> None:
         self.converter = DocumentConverter()
-
-    def _parse_filename(self, file_path: Path) -> tuple[str, str]:
-        """
-        Parse company ticker and quarter from filename.
-
-        Examples:
-        - AAPL_2024_Q1.pdf
-        - AAPL-Q1-2024.pdf
-        - 2022 Q3 AAPL.pdf
-        - AAPL_SEC_2024_Q1.pdf
-
-        Returns:
-            (company, quarter), e.g. ("AAPL", "Q1 2024")
-        """
-        stem = file_path.stem.strip()
-        if not stem:
-            raise InvalidPDFFileNameError(f"Empty filename: {file_path.name}")
-
-        normalized = re.sub(r"[-\s]+", "_", stem)
-        normalized = re.sub(r"_+", "_", normalized).strip("_")
-
-        quarter_match = re.search(r"(20\d{2})_(Q[1-4])", normalized, re.IGNORECASE)
-        if quarter_match:
-            year = quarter_match.group(1)
-            q = quarter_match.group(2).upper()
-            quarter = f"{q} {year}"
-        else:
-            quarter_match = re.search(r"(Q[1-4])_(20\d{2})", normalized, re.IGNORECASE)
-            if quarter_match:
-                q = quarter_match.group(1).upper()
-                year = quarter_match.group(2)
-                quarter = f"{q} {year}"
-            else:
-                raise InvalidPDFFileNameError(
-                    f"Could not parse quarter from filename: {file_path.name}"
-                )
-
-        tokens = [t for t in normalized.split("_") if t]
-        for token in tokens:
-            upper_token = token.upper()
-
-            if upper_token in self.NON_TICKER_TOKENS:
-                continue
-            if re.fullmatch(r"Q[1-4]", upper_token):
-                continue
-            if re.fullmatch(r"20\d{2}", upper_token):
-                continue
-            if re.fullmatch(r"[A-Z]{1,10}", upper_token):
-                return upper_token, quarter
-
-        raise InvalidPDFFileNameError(
-            f"Could not parse company ticker from filename: {file_path.name}"
-        )
 
     def _extract_page_number(self, item) -> int | None:
         prov = getattr(item, "prov", None)
