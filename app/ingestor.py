@@ -8,8 +8,10 @@ import chromadb
 from .models import Chunk
 from .chunker import DocumentChunker
 import logging
-from .parser_router import ParserRouter
-from .pdf_parser import PDFParser
+from .parsers.parser_router import ParserRouter
+from .parsers.pdf_parser import PDFParser
+from .parsers.html_parser import HTMLParser
+from .parsers.markdown_parser import MarkdownParser
 from pathlib import Path
 
 logging.getLogger("chromadb").setLevel(logging.ERROR)
@@ -18,7 +20,8 @@ client = OpenAI(api_key=settings.openai_api_key)
 chroma_client = chromadb.PersistentClient(path=settings.chroma_db_path)
 
 # Default shared instances for production usage.
-default_router = ParserRouter(parsers=[PDFParser()])
+default_router = ParserRouter(parsers=[PDFParser(), HTMLParser(), MarkdownParser()])
+
 default_chunker = DocumentChunker()
 
 def get_embeddings(chunks: list[Chunk]) -> list[list[float]]:
