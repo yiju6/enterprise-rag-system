@@ -18,7 +18,7 @@ if settings.openai_api_key:
     os.environ["OPENAI_API_KEY"] = settings.openai_api_key
 
 client = AsyncOpenAI()
-llm = llm_factory("gpt-4o-mini", client=client, max_tokens=8192)
+llm = llm_factory(settings.evaluation_model, client=client, max_tokens=8192)
 embeddings = OpenAIEmbeddings(client=client)
 
 async def compute_generation_metrics(

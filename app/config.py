@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     anthropic_api_key: str = ""
     anthropic_model: str = ""
     embedding_model: str = ""
+    evaluation_model: str = "gpt-4o-mini"
     chroma_db_path: str = ""
     evaluation_db_path: str = "data/evaluation_runs.db"
     chunk_size: int = 800 
