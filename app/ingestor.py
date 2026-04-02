@@ -81,14 +81,16 @@ def store_in_chromadb(chunks: list[Chunk], embeddings: list[list[float]]) -> Non
             metadatas=[metadata],
         )
 
+def delete_document(source_file: str) -> None:
+    """Delete all chunks for a document before re-ingesting."""
+    collection = chroma_client.get_or_create_collection(name="doc")
+    results = collection.get(where={"source_file": source_file})
+    if results["ids"]:
+        collection.delete(ids=results["ids"])
 
 def ingest(file_path: Path, router: ParserRouter = default_router,
-    chunker: DocumentChunker = default_chunker,) -> None:
-    """
-    End-to-end ingestion pipeline:
-    ParserRouter.parse(file_path) -> DocumentChunker.chunk(document)
-    -> embeddings -> ChromaDB
-    """
+    chunker: DocumentChunker = default_chunker) -> None:
+    delete_document(file_path.name)
     document = router.parse(file_path)
     chunks = chunker.chunk(document)
     embeddings = get_embeddings(chunks)
