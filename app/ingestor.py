@@ -20,7 +20,11 @@ client = OpenAI(api_key=settings.openai_api_key)
 chroma_client = chromadb.PersistentClient(path=settings.chroma_db_path)
 
 # Default shared instances for production usage.
-default_router = ParserRouter(parsers=[PDFParser(), HTMLParser(), MarkdownParser()])
+default_router = ParserRouter(parsers=[
+    PDFParser(chunk_size=settings.chunk_size),
+    HTMLParser(chunk_size=settings.chunk_size),
+    MarkdownParser(chunk_size=settings.chunk_size),
+])
 
 default_chunker = DocumentChunker()
 

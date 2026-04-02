@@ -22,8 +22,9 @@ class DoclingBaseParser(BaseParser):
     - shared iterate_items -> Document conversion logic
     """
 
-    def __init__(self) -> None:
+    def __init__(self, chunk_size: int = 800) -> None:
         self.converter = DocumentConverter()
+        self.chunk_size = chunk_size
 
     def _extract_text(self, item) -> str | None:
         for attr in ("text", "orig", "raw_text", "content"):
@@ -141,6 +142,8 @@ class DoclingBaseParser(BaseParser):
                     ),
                 )
             )
+        
+        blocks = self._merge_short_blocks(blocks, chunk_size=self.chunk_size)
 
         return Document(
             source_file=file_path.name,
@@ -153,3 +156,63 @@ class DoclingBaseParser(BaseParser):
                 }
             ),
         )
+    
+    def _merge_short_blocks(self, blocks: list[Block], chunk_size: int) -> list[Block]:
+        merged_blocks: list[Block] = []
+        current_content: list[str] = []
+        current_metadata: dict = {}
+        current_section: str | None = None
+
+        def flush():
+            if current_content:
+                merged_blocks.append(Block(
+                    content="\n".join(current_content),
+                    content_type="text",
+                    metadata=dict(current_metadata),
+                ))
+                current_content.clear()
+
+        for block in blocks:
+            if block.content_type != "text":
+                flush()
+                merged_blocks.append(block)
+                continue
+
+            block_section = block.metadata.get("section")
+            block_page = block.metadata.get("page_number")
+
+            if not current_content:
+                current_content.append(block.content)
+                current_metadata = dict(block.metadata)
+                current_metadata["page_number_start"] = block_page
+                current_metadata.pop("page_number", None)
+                current_metadata["page_number_end"] = block_page
+                current_section = block_section
+                continue
+
+            if block_section != current_section:
+                flush()
+                current_content.append(block.content)
+                current_metadata = dict(block.metadata)
+                current_metadata["page_number_start"] = block_page
+                current_metadata.pop("page_number", None)
+                current_metadata["page_number_end"] = block_page
+                current_section = block_section
+                continue
+
+            merged_length = sum(len(c) for c in current_content) + len(block.content) + len(current_content)
+            if merged_length <= chunk_size:
+                current_content.append(block.content)
+                current_metadata["page_number_end"] = block_page
+            else:
+                flush()
+                current_content.append(block.content)
+                current_metadata = dict(block.metadata)
+                current_metadata["page_number_start"] = block_page
+                current_metadata.pop("page_number", None)
+                current_metadata["page_number_end"] = block_page
+                current_section = block_section
+
+        flush()
+        return merged_blocks
+

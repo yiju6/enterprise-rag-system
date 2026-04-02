@@ -1,3 +1,8 @@
+# TODO Week 4: Investigate table chunking strategy for tables exceeding
+# ~4000 chars. Current approach keeps tables intact which may crowd out
+# other context in LLM generation. Consider row-based chunking with
+# header preservation.
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -228,7 +233,7 @@ class DocumentChunker(ChunkingStrategy):
             )
         return chunks
 
-    def compute_metrics(self, chunks: list[Chunk]) -> dict:
+    '''def compute_metrics(self, chunks: list[Chunk]) -> dict:
         if not chunks:
             return {
                 "num_chunks": 0,
@@ -254,3 +259,31 @@ class DocumentChunker(ChunkingStrategy):
             "avg_chunk_length": round(avg_chunk_length, 2),
             "table_ratio": round(table_ratio, 4),
         }
+'''
+    def compute_metrics(self, chunks: list[Chunk]) -> dict:
+        if not chunks:
+            return {
+                "num_chunks": 0,
+                "num_text_chunks": 0,
+                "num_table_chunks": 0,
+                "avg_text_chunk_length": 0,
+                "avg_table_chunk_length": 0,
+                "table_ratio": 0,
+            }
+
+        num_chunks = len(chunks)
+        text_chunks = [c for c in chunks if c.content_type == "text"]
+        table_chunks = [c for c in chunks if c.content_type == "table"]
+
+        avg_text = round(sum(len(c.content) for c in text_chunks) / len(text_chunks), 2) if text_chunks else 0
+        avg_table = round(sum(len(c.content) for c in table_chunks) / len(table_chunks), 2) if table_chunks else 0
+
+        return {
+            "num_chunks": num_chunks,
+            "num_text_chunks": len(text_chunks),
+            "num_table_chunks": len(table_chunks),
+            "avg_text_chunk_length": avg_text,
+            "avg_table_chunk_length": avg_table,
+            "table_ratio": round(len(table_chunks) / num_chunks, 4),
+        }
+        
