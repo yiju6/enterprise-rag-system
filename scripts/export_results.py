@@ -1,3 +1,4 @@
+from pathlib import Path
 import json
 import csv
 import os
@@ -7,6 +8,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app.evaluator.storage import get_evaluation_runs
 
 def export_to_csv(run_id: str, output_path: str):
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+
     runs = get_evaluation_runs()
     
     run = next((r for r in runs if r['run_id'] == run_id), None)
@@ -53,8 +56,11 @@ def export_to_csv(run_id: str, output_path: str):
     
     print(f"Exported {len(run['results'])} results to {output_path}")
 
+
 if __name__ == "__main__":
-    export_to_csv(
-        run_id="week2_baseline_parallel",
-        output_path="output/evaluation_runs/week2_baseline_results_parallel.csv"
-    )
+    if len(sys.argv) < 2:
+        print("Usage: python export_csv.py <run_id>")
+        sys.exit(1)
+    run_id = sys.argv[1]
+    output_path = f"outputs/evaluation_runs/{run_id}/results_{run_id}.csv"
+    export_to_csv(run_id=run_id, output_path=output_path)
