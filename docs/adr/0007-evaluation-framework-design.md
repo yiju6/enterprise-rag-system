@@ -20,11 +20,11 @@ Three categories of evaluation exist:
 **Retrieval layer - Deterministic metrics:**
 - `Hit Rate@K`: whether the correct source document appears in the top-K results
 - `MRR (Mean Reciprocal Rank)`: rank position of the correct document
+- `Context Recall`: measures how many of the relevant documents (or pieces of information) were successfully retrieved.
 
 These are suitable because the Docugami dataset provides `source_docs` annotations, enabling direct document-level matching without LLM involvement.
 
 **Generation layer - LLM-as-Judge via RAGAS:**
-- `Context Recall`: whether retrieved context contains the necessary information
 - `Faithfulness`: whether the answer is grounded in retrieved context (1 - hallucination rate)
 - `Answer Relevance`: whether the answer addresses the question
 - `Answer Correctness`: semantic similarity to ground truth
