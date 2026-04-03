@@ -5,8 +5,14 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app.evaluator.pipeline import run_evaluation
 from app.evaluator.storage import save_evaluation_run
 
+if len(sys.argv) < 2:
+    print("Usage: python run_evaluation.py <run_id>")
+    sys.exit(1)
+
+run_id = sys.argv[1]
+
 run = run_evaluation(
-    run_id="week2_baseline_parallel",
+    run_id=run_id,
     dataset_path="data/evaluation/qna_data.csv",
     companies=["AAPL", "NVDA", "MSFT"],
     quarter="2023 Q3"
