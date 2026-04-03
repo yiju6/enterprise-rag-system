@@ -1,8 +1,9 @@
 ''' Metrics to evaluate the quality of generated answers in RAG systems.
 Faithfulness - ensures that the generated answer is supported by the retrieved evidence.
 Answer Relevance - ensures that the generated answer is relevant to the question and the retrieved evidence.
-Context Recall - ensures that the generated answer incorporates all relevant information from the retrieved evidence.
 Answer Correctness - ensures that the generated answer is semantically correct compared to the ground truth.
+Context Recall - measures whether retrieved context contains all information needed to answer the question. Conceptually a retrieval metric; reported under B1 in eval reports.
+
 '''
 import os
 import asyncio
